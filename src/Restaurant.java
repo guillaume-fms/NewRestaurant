@@ -26,11 +26,13 @@ public class Restaurant {
 			  
             // Recevoir le fichier 
 			BufferedWriter fw = new BufferedWriter(new FileWriter("resto.txt"));
+			int i = 0;
+			fw.write("************ Résume de la commande du repas n° " + i ++ + " **************\n");
+	        fw.newLine();
+	        fw.close(); 
            //FileWriter fw = new FileWriter("resto.txt");
-           fw.write("*********** Voici les commandes ***********");
-           fw.newLine();
-           fw.close();
-           System.out.println("Le texte a été écrit avec succès");
+           
+          // System.out.println("Le texte a été écrit avec succès");
             // Créer un nouveau fichier
            // Vérifier s'il n'existe pas
             //if (f.createNewFile())
@@ -86,6 +88,7 @@ public class Restaurant {
 		for(int i=1;i<table.length;i++) {			
 			System.out.print("[" + i + " - " + table[i].toUpperCase() + "]");
 		}
+		
 		System.out.println();	
 	}	
 }
