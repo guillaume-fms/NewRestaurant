@@ -1,18 +1,17 @@
-import java.io.BufferedReader;
+
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
+/*@author PastorGuillaume
+ *@since Jeudi 24 et Vendredi 25 Février 2023
+ *@params Exos Execption
+ *@return Exercice 3 : AdvEx3File. Le gérant du resto souhaite imprimer les menus pour les déposer
+ *sur les tables des clients d’une part et les transmettre en cuisine d’autre part afin de simplifier
+ *son organisation.
+ * 
+ */
 
 public class Restaurant {
 	public static final String [] STARTER = 	{"entrée", "salade","soupe","quiche","aucune"};
@@ -27,14 +26,13 @@ public class Restaurant {
 			  
             // Recevoir le fichier 
 			BufferedWriter fw = new BufferedWriter(new FileWriter("resto.txt"));
-            //FileWriter fw = new FileWriter("resto.txt");
-            fw.write("*********** Voici les commandes ***********");
-            fw.newLine();
-            fw.newLine();
-            fw.close();
-            System.out.println("Le texte a été écrit avec succès");
+           //FileWriter fw = new FileWriter("resto.txt");
+           fw.write("*********** Voici les commandes ***********");
+           fw.newLine();
+           fw.close();
+           System.out.println("Le texte a été écrit avec succès");
             // Créer un nouveau fichier
-            // Vérifier s'il n'existe pas
+           // Vérifier s'il n'existe pas
             //if (f.createNewFile())
             //    System.out.println("Fichier crée");
             //else
@@ -76,11 +74,11 @@ public class Restaurant {
 	}
 	public static int getInfos(Scanner scan, String info) {
 		System.out.println("choix " + info + " : ");
-		if(info.equalsIgnoreCase(STARTER[0]))	displayTable(STARTER);
-		else if(info.equalsIgnoreCase(DISHES[0]))	displayTable(DISHES);
-		else if(info.equalsIgnoreCase(SIDE_DISH[0]))	displayTable(SIDE_DISH);
-		else if(info.equalsIgnoreCase(DRINKS[0]))	displayTable(DRINKS);
-		else if(info.equalsIgnoreCase(DESSERTS[0]))	displayTable(DESSERTS);		
+		if(info.equalsIgnoreCase(STARTER[0])) displayTable(STARTER);
+		else if(info.equalsIgnoreCase(DISHES[0])) displayTable(DISHES);
+		else if(info.equalsIgnoreCase(SIDE_DISH[0])) displayTable(SIDE_DISH);
+		else if(info.equalsIgnoreCase(DRINKS[0])) displayTable(DRINKS);
+		else if(info.equalsIgnoreCase(DESSERTS[0])) displayTable(DESSERTS);		
 		System.out.println("que souhaitez vous comme "+ info + " ? [saisir le chiffre correspondant]");
 		return scan.nextInt();
 	}	
@@ -88,12 +86,6 @@ public class Restaurant {
 		for(int i=1;i<table.length;i++) {			
 			System.out.print("[" + i + " - " + table[i].toUpperCase() + "]");
 		}
-		System.out.println();
-	
-		
-	
-		
-	}
-	
-	
+		System.out.println();	
+	}	
 }
