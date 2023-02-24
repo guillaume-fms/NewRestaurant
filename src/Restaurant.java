@@ -1,13 +1,14 @@
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+//import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/*@author PastorGuillaume
+/*
  *@since Jeudi 24 et Vendredi 25 Février 2023
- *@params Exos Execption
- *@return Exercice 3 : AdvEx3File. Le gérant du resto souhaite imprimer les menus pour les déposer
+ *@params Exos Execption /  Gestion de fichiers / retour sur le Tp Resto
+ *@return Exercice 3.1 : AdvEx3File. Le gérant du resto souhaite imprimer les menus pour les déposer
  *sur les tables des clients d’une part et les transmettre en cuisine d’autre part afin de simplifier
  *son organisation.
  * 
@@ -20,30 +21,9 @@ public class Restaurant {
 	public static final String [] DRINKS = 		{"boissons" , "eau plate" , "eau gazeuze" , "soda" , "vin","aucune"};
 	public static final String [] DESSERTS = 	{"desserts" , "tarte maison" , "mousse au chocolat" , "tiramisu","aucun"};
 
-	public static void main(String[] args) {	
-		
-		try {
-			  
-            // Recevoir le fichier 
-			BufferedWriter fw = new BufferedWriter(new FileWriter("resto.txt"));
-			int i = 0;
-			fw.write("************ Résume de la commande du repas n° " + i ++ + " **************\n");
-	        fw.newLine();
-	        fw.close(); 
-           //FileWriter fw = new FileWriter("resto.txt");
-           
-          // System.out.println("Le texte a été écrit avec succès");
-            // Créer un nouveau fichier
-           // Vérifier s'il n'existe pas
-            //if (f.createNewFile())
-            //    System.out.println("Fichier crée");
-            //else
-             //   System.out.println("Fichier existe déjà");
-        }
-        catch (Exception e) {
-        	System.out.println("toto");
-            e.printStackTrace();
-        }
+	public static void main(String[] args)  {	
+
+
 		System.out.println("bonjour,combien de menus souhaitez vous ?");
 		Scanner scan = new Scanner(System.in);
 		int nbMenu;
@@ -69,10 +49,24 @@ public class Restaurant {
 
 			System.out.println("Résumé de la commande "+(i+1));
 			System.out.println(order);		//ici on pourrait stocker la commande en base par exemple
-			System.out.println();			//avant de passer à la suivante
-			order.clear();
+			System.out.println();          //avant de passer à la suivante
+
+			try {
+				// Créer et Ecrire dans le fichier 
+				BufferedWriter fw = new BufferedWriter(new FileWriter("resto.txt"));
+				// PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("restoCommande.txt")));
+				fw.write("Résumé de la commande du repas num "  + (i+1) + order );
+				fw.newLine();  
+				fw.flush();  // sert à vider le buffer
+				fw.close();
+			}
+			catch (Exception e) {
+				//System.out.println();
+				e.printStackTrace();
+			}
+			
+			System.out.println();
 		}
-		
 	}
 	public static int getInfos(Scanner scan, String info) {
 		System.out.println("choix " + info + " : ");
@@ -83,12 +77,11 @@ public class Restaurant {
 		else if(info.equalsIgnoreCase(DESSERTS[0])) displayTable(DESSERTS);		
 		System.out.println("que souhaitez vous comme "+ info + " ? [saisir le chiffre correspondant]");
 		return scan.nextInt();
-	}	
+	}
 	public static void displayTable(String [] table) {
 		for(int i=1;i<table.length;i++) {			
 			System.out.print("[" + i + " - " + table[i].toUpperCase() + "]");
 		}
-		
-		System.out.println();	
-	}	
+		System.out.println();
+	}
 }
