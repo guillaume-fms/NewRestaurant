@@ -55,7 +55,7 @@ public class Restaurant {
 				// Créer et Ecrire dans le fichier 
 				BufferedWriter fw = new BufferedWriter(new FileWriter("resto.txt"));
 				// PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("restoCommande.txt")));
-				fw.write("Résumé de la commande du repas num "  + (i+1) + order );
+				fw.write(" ********** Résumé de la commande du repas num  " + (i+1) + " **********  \n " + (i+1) +("\n" + order));
 				fw.newLine();  
 				fw.flush();  // sert à vider le buffer
 				fw.close();

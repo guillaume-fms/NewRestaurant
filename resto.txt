@@ -1,1 +1,3 @@
-Résumé de la commande du repas num 2[salade, poulet, riz, eau plate, tarte maison, soupe, boeuf, pates, eau gazeuze, mousse au chocolat]
+ ********** Résumé de la commande du repas num  3 **********  
+ 3
+[salade, poulet, riz, eau plate, tarte maison, soupe, boeuf, pates, eau gazeuze, mousse au chocolat, quiche, boeuf, pates, eau gazeuze, tarte maison]
