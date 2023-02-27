@@ -1,3 +1,12 @@
- ********** Résumé de la commande du repas num  3 **********  
- 3
-[salade, poulet, riz, eau plate, tarte maison, soupe, boeuf, pates, eau gazeuze, mousse au chocolat, quiche, boeuf, pates, eau gazeuze, tarte maison]
+ ************** Résumé de la commande numéro 1 **************
+[salade, poulet, riz, eau plate, tarte maison]
+ ************** Résumé de la commande numéro 1 **************
+[salade, poulet, riz, eau plate, tarte maison]
+ ************** Résumé de la commande numéro 2 **************
+[salade, poulet, riz, eau plate, tarte maison, soupe, boeuf, pates, eau gazeuze, mousse au chocolat]
+ ************** Résumé de la commande numéro 3 **************
+[salade, poulet, riz, eau plate, tarte maison, soupe, boeuf, pates, eau gazeuze, mousse au chocolat, quiche, poisson, frites, soda, tiramisu]
+ ************** Résumé de la commande numéro 1 **************
+[salade, boeuf, riz, eau plate, tarte maison]
+ ************** Résumé de la commande numéro 1 **************
+[salade, poulet, pates, eau gazeuze, tarte maison]
